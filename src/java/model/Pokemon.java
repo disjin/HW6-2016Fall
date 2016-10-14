@@ -4,8 +4,8 @@ public class Pokemon {
     private int pokemonID;
     private String pokemonName;
     private String pokemonType;
-    private int weight;
-    private int height;
+    private double weight;
+    private double height;
     private int CP;
 
     public Pokemon() {
@@ -17,7 +17,7 @@ public class Pokemon {
         this.CP = 0;
     }
     
-    public Pokemon(int pokemonID, String pokemonName, String pokemonType, int weight, int height, int CP) {
+    public Pokemon(int pokemonID, String pokemonName, String pokemonType, double weight, double height, int CP) {
         this.pokemonID = pokemonID;
         this.pokemonName = pokemonName;
         this.pokemonType = pokemonType;
@@ -50,19 +50,19 @@ public class Pokemon {
         this.pokemonType = pokemonType;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
-    public int getHeight() {
+    public double getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(double height) {
         this.height = height;
     }
 

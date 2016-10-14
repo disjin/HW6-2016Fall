@@ -10,7 +10,7 @@
     
     
     <body>
-        <h1>My Pokemon Database</h1>
+        <h1>My Pokemons Database</h1>
         <%= table %>
     </body>
 </html>

@@ -104,7 +104,8 @@ public class ReadQuery {
                 table += pokemon.getCP();
                 table += "</td>";
                 
-                
+                table += "<td>";
+                table += "<a href=delete?pokemonID=" + pokemon.getPokemonID() + "> Delete </a>";
                 table += "</tr>";
                 
                 

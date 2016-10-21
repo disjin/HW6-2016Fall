@@ -4,9 +4,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Add A New Pokemon</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
         <h1>Add A New Pokemon</h1>
+        <hr class="style">
         
         <form name="addForm" action="addPokemon" method="get">
             

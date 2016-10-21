@@ -66,7 +66,15 @@ public class ReadQuery {
         
         String table = "";
         
-        table += "<table border=1>";
+        table += "<table >";
+        table += "<tr>"; 
+        table += "<th>PokemonID</th>";
+        table += "<th>PokemonName</th>"; 
+        table += "<th>PokemonType</th>";
+        table += "<th>Weight</th>";
+        table += "<th>Height</th>"; 
+        table += "<th>CP</th>";
+        table += "</tr>";
         
         try {
             while(this.results.next()){

@@ -74,6 +74,7 @@ public class ReadQuery {
         table += "<th>Weight</th>";
         table += "<th>Height</th>"; 
         table += "<th>CP</th>";
+        table += "<th>  </th>";
         table += "</tr>";
         
         try {

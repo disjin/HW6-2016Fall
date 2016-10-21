@@ -11,6 +11,12 @@
     
     <body>
         <h1>My Pokemons Database</h1>
+        
         <%= table %>
+        
+        <br><br>
+        
+        <a href ="add">Add A New Pokemon</a>
+        
     </body>
 </html>

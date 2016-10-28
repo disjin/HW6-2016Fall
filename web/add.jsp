@@ -12,20 +12,53 @@
         
         <form name="addForm" action="addPokemon" method="get">
             
-            <label>Pokemon Name:</label>
-            <input type="text" name="name" value="" />
-            <br>
-            <label>Pokemon Type:</label>
-            <input type="text" name="type" value="" />
-            <br>
-            <label>Weight:</label>
-            <input type="text" name="weight" value="" />
-            <br>
-            <label>Height:</label>
-            <input type="text" name="height" value="" />
-            <br>
-            <label>CP:</label>
-            <input type="text" name="CP" value="" />
+            <table>
+                <tr>
+                    <td class="right">
+                      Pokemon Name:  
+                    </td>
+                    <td class="left">
+                      <input type="text" name="name" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                      Pokemon Type:  
+                    </td>
+                    <td class="left">
+                      <input type="text" name="type" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                      Weight: 
+                    </td>
+                    <td class="left">
+                      <input type="text" name="weight" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                       Height:  
+                    </td>
+                    <td class="left">
+                       <input type="text" name="height" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                       CP: 
+                    </td>
+                    <td class="left">
+                       <input type="text" name="CP" value="" />
+                    </td>
+                </tr>                
+            </table>
+            
+            
+            
+           
+           
             <br>
             <input type="submit" name="submit" value="Submit" />
             

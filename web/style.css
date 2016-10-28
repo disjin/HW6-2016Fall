@@ -36,6 +36,7 @@ body {
     background-color: #D2B48C;
 }
 
+input[readonly] {background-color:gray;}
  .right {text-align:left;}
  .left {text-align:left;}
  .update td {text-align:left;}

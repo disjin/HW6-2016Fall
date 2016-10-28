@@ -13,13 +13,13 @@ import java.util.logging.Logger;
 import model.Pokemon;
 
 
-public class ReadQuery {
+public class SearchQuery {
     
     private Connection conn;
     private ResultSet results;
     
-    public ReadQuery(){
-        
+    public SearchQuery() {
+    
         try{
         
             Properties props = new Properties(); //MWC
@@ -27,12 +27,12 @@ public class ReadQuery {
             try {
                 props.load(instr);
             } catch (IOException ex) {
-                Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
             }
             try {
                 instr.close();
             } catch (IOException ex) {
-                Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
             }
         
             String driver = props.getProperty("driver.name");
@@ -42,23 +42,24 @@ public class ReadQuery {
             Class.forName(driver);
             conn = DriverManager.getConnection(url, username, passwd);
           } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
           } catch (SQLException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
           }
-        
-        
+    
+    
     }
     
-    public void doRead() {
+    public void doSearch(String pokemonName) {
         
         try {
-            String query = "Select * from pokemon ORDER BY pokemonID ASC";
+            String query = "SELECT * FROM pokemon WHERE UPPER(pokemonName) LIKE ?";
             
-            PreparedStatement ps = conn.prepareStatement (query);
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, "%" + pokemonName.toUpperCase() + "%");
             this.results = ps.executeQuery();
         } catch (SQLException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -120,11 +121,11 @@ public class ReadQuery {
                 
                 
             }   } catch (SQLException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
         table += "</table>";
         
                     return table;
     }
+ 
 }
-

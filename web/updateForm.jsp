@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="model.Pokemon"%>
-<% Pokemon pokemon = (Pokemon) request.getAttribute("pokemon"); %>
+<% Pokemon pokemon = (Pokemon) request.getAttribute("pokemon");%>
 
 <!DOCTYPE html>
 <html>
@@ -10,69 +10,84 @@
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
-        <h1>Update A New Pokemon Record</h1>
-        <hr class="style">
-        
-        <form name="updateForm" action="updatePokemon" method="get">
-            
-            <table class="update">
-                <tr>
-                    <td class="right">
-                      Pokemon ID:  
-                    </td>
-                    <td class="left">
-                        <input type="text" name="id" value="<%= pokemon.getPokemonID() %>" readonly/>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="right">
-                      Pokemon Name:  
-                    </td>
-                    <td class="left">
-                      <input type="text" name="name" value="<%= pokemon.getPokemonName() %>" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="right">
-                      Pokemon Type:  
-                    </td>
-                    <td class="left">
-                      <input type="text" name="type" value="<%= pokemon.getPokemonType() %>" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="right">
-                      Weight: 
-                    </td>
-                    <td class="left">
-                      <input type="text" name="weight" value="<%= pokemon.getWeight() %>" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="right">
-                       Height:  
-                    </td>
-                    <td class="left">
-                       <input type="text" name="height" value="<%= pokemon.getHeight() %>" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="right">
-                       CP: 
-                    </td>
-                    <td class="left">
-                       <input type="text" name="CP" value="<%= pokemon.getCP() %>" />
-                    </td>
-                </tr>                
-            </table>
-            
-            
-            
-           
-           
-            <br>
-            <input type="submit" name="submit" value="Update" />
-            
-        </form>
+        <div class="wrap"> <!--div to hold all other divs -->
+
+            <%@ include file="includes/header.jsp" %>
+
+            <%@ include file="includes/menu.jsp" %>
+
+            <div class="main"> <!--main div-->
+
+                <h1>Update A New Pokemon Record</h1>
+                <hr class="style">
+
+                <form name="updateForm" action="updatePokemon" method="get">
+
+                    <table class="update">
+                        <tr>
+                            <td class="right">
+                                Pokemon ID:  
+                            </td>
+                            <td class="left">
+                                <input type="text" name="id" value="<%= pokemon.getPokemonID()%>" readonly/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="right">
+                                Pokemon Name:  
+                            </td>
+                            <td class="left">
+                                <input type="text" name="name" value="<%= pokemon.getPokemonName()%>" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="right">
+                                Pokemon Type:  
+                            </td>
+                            <td class="left">
+                                <input type="text" name="type" value="<%= pokemon.getPokemonType()%>" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="right">
+                                Weight: 
+                            </td>
+                            <td class="left">
+                                <input type="text" name="weight" value="<%= pokemon.getWeight()%>" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="right">
+                                Height:  
+                            </td>
+                            <td class="left">
+                                <input type="text" name="height" value="<%= pokemon.getHeight()%>" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="right">
+                                CP: 
+                            </td>
+                            <td class="left">
+                                <input type="text" name="CP" value="<%= pokemon.getCP()%>" />
+                            </td>
+                        </tr>                
+                    </table>
+
+
+
+
+
+                    <br>
+                    <input type="submit" name="submit" value="Update" />
+
+                </form>
+
+            </div> <!--close main div -->
+
+            <%@ include file="includes/footer.jsp" %>
+
+        </div> <!-- close the wrap div -->
+
     </body>
 </html>
